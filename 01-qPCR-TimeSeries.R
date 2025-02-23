@@ -20,13 +20,11 @@ metadata_calc$Date <- as.Date(metadata_calc$Date)
 ##########
 long_DNA_data <- metadata_calc %>%
   pivot_longer(cols = c("Volume filtered (ml SW)", 
-                        "DNA (ng/L SW)",
-                        "16Sin extraction efficiency"), 
+                        "DNA (μg/L SW)"), 
                names_to = "value", 
                values_to = "quantities") %>% 
   mutate(value = factor(value, levels = c("Volume filtered (ml SW)", 
-                                          "DNA (ng/L SW)",
-                                          "16Sin extraction efficiency")))
+                                          "DNA (μg/L SW)")))
 
 # Plot surface data
 (plot <- long_DNA_data %>%   
@@ -43,13 +41,13 @@ long_DNA_data <- metadata_calc %>%
   scale_color_manual(values = c("#F0B8B2", "#C1CDCD", "#009E73", "#0072B2", "#9932CC", "#D55E00", "#F0E442")) +
   theme(
     legend.position = "bottom",
-    legend.title = element_text(face = "bold"),
-    legend.text = element_text(face = "bold"),
-    axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
-    axis.text.y = element_text(face = "bold"),  # Bold y-axis values
-    axis.title.x = element_text(face = "bold"),    # Bold axis labels
-    axis.title.y = element_text(face = "bold"),    # Bold axis labels
-    strip.text = element_text(face = "bold")    # Bold facet titles
+    legend.title = element_text(size = 16, face = "bold"),
+    legend.text = element_text(size = 16, face = "bold"),
+    axis.text.x = element_text(size = 16, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+    axis.text.y = element_text(size = 16, face = "bold"),  # Bold y-axis values
+    axis.title.x = element_text(size = 16, face = "bold"),    # Bold axis labels
+    axis.title.y = element_text(size = 16, face = "bold"),    # Bold axis labels
+    strip.text = element_text(size = 16, face = "bold")    # Bold facet titles
   ))
 
 ggsave(
@@ -72,13 +70,13 @@ ggsave(
   scale_color_manual(values = c("#F0B8B2", "#C1CDCD", "#009E73", "#0072B2", "#9932CC", "#D55E00", "#F0E442")) +
     theme(
       legend.position = "bottom",
-      legend.title = element_text(face = "bold"),
-      legend.text = element_text(face = "bold"),
-      axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
-      axis.text.y = element_text(face = "bold"),  # Bold y-axis values
-      axis.title.x = element_text(face = "bold"),    # Bold axis labels
-      axis.title.y = element_text(face = "bold"),    # Bold axis labels
-      strip.text = element_text(face = "bold")    # Bold facet titles
+      legend.title = element_text(size = 16, face = "bold"),
+      legend.text = element_text(size = 16, face = "bold"),
+      axis.text.x = element_text(size = 16, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 16, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 16, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 16, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 16, face = "bold")    # Bold facet titles
     ))
 ggsave(
   filename = "outputs/metadata_TimeSeries/Deep_vol-dna-eff.png",
@@ -93,10 +91,10 @@ ggsave(
 ## qPCR quantities, no efficiency calculations
 ##########
 long_qPCR_data <- metadata_calc %>%
-  pivot_longer(cols = c("12S copies/mL SW", 
-                        "16S copies/mL SW",
-                        "18S copies/mL SW",
-                        "COI copies/mL SW"), 
+  pivot_longer(cols = c("12S copies/L SW", 
+                        "16S copies/L SW",
+                        "18S copies/L SW",
+                        "COI copies/L SW"), 
                names_to = "gene", 
                values_to = "gene_quantity")
 
@@ -164,10 +162,10 @@ ggsave(
 ## qPCR quantities, with efficiency calculations
 ##########
 long_qPCR_eff_data <- metadata_calc %>%
-  pivot_longer(cols = c("12S copies/mL SW * eff", 
-                        "16S copies/mL SW * eff",
-                        "18S copies/mL SW * eff",
-                        "COI copies/mL SW * eff"), 
+  pivot_longer(cols = c("12S copies/L SW * eff", 
+                        "16S copies/L SW * eff",
+                        "18S copies/L SW * eff",
+                        "COI copies/L SW * eff"), 
                names_to = "gene", 
                values_to = "gene_quantity")
 
@@ -241,16 +239,16 @@ long_seq_data <- metadata_calc %>%
                         "18S_DADA2_reads",
                         "16S_spike_ratios",
                         "18S_spike_ratios",
-                        "16S seq/mL SW",
-                        "18S seq/mL SW"),
+                        "16S seq/L SW",
+                        "18S seq/L SW"),
                names_to = "gene", 
                values_to = "reads") %>% 
   mutate(gene = factor(gene, levels = c("16S_DADA2_reads",
                                         "18S_DADA2_reads",
                                         "16S_spike_ratios",
                                         "18S_spike_ratios",
-                                        "16S seq/mL SW",
-                                        "18S seq/mL SW")))
+                                        "16S seq/L SW",
+                                        "18S seq/L SW")))
 
 
 (plot <- long_seq_data %>% 
@@ -328,16 +326,16 @@ ggsave(
 ## 12S
 ###########
 long_12S_data <- metadata_calc %>%
-  pivot_longer(cols = c("DNA (ng/L SW)",
+  pivot_longer(cols = c("DNA (μg/L SW)",
                         "16Sin extraction efficiency",
-                        "12S copies/mL SW",
-                        "12S copies/mL SW * eff"), 
+                        "12S copies/L SW",
+                        "12S copies/L SW * eff"), 
                names_to = "gene", 
                values_to = "gene_quantity") %>% 
-  mutate(gene = factor(gene, levels = c("DNA (ng/L SW)",
+  mutate(gene = factor(gene, levels = c("DNA (μg/L SW)",
                                         "16Sin extraction efficiency",
-                                        "12S copies/mL SW",
-                                        "12S copies/mL SW * eff")))
+                                        "12S copies/L SW",
+                                        "12S copies/L SW * eff")))
 
 
 # Plot surface data
@@ -403,18 +401,18 @@ ggsave(
 ## 16S
 ###########
 long_16S_data <- metadata_calc %>%
-  pivot_longer(cols = c("DNA (ng/L SW)",
+  pivot_longer(cols = c("DNA (μg/L SW)",
                         "16Sin extraction efficiency",
-                        "16S copies/mL SW",
-                        "16S copies/mL SW * eff",                        
-                        "16S seq/mL SW"),
+                        "16S copies/L SW",
+                        "16S copies/L SW * eff",                        
+                        "16S seq/L SW"),
                names_to = "gene", 
                values_to = "gene_quantity") %>% 
-  mutate(gene = factor(gene, levels = c("DNA (ng/L SW)",
+  mutate(gene = factor(gene, levels = c("DNA (μg/L SW)",
                                         "16Sin extraction efficiency",
-                                        "16S copies/mL SW",
-                                        "16S copies/mL SW * eff",                        
-                                        "16S seq/mL SW")))
+                                        "16S copies/L SW",
+                                        "16S copies/L SW * eff",                        
+                                        "16S seq/L SW")))
 
 # Plot surface data
 (plot <- long_16S_data %>% 
@@ -479,18 +477,18 @@ ggsave(
 ## 18S
 ###########
 long_18S_data <- metadata_calc %>%
-  pivot_longer(cols = c("DNA (ng/L SW)",
+  pivot_longer(cols = c("DNA (μg/L SW)",
                         "16Sin extraction efficiency",
-                        "18S copies/mL SW",
-                        "18S copies/mL SW * eff",                        
-                        "18S seq/mL SW"), 
+                        "18S copies/L SW",
+                        "18S copies/L SW * eff",                        
+                        "18S seq/L SW"), 
                names_to = "gene", 
                values_to = "gene_quantity") %>% 
-  mutate(gene = factor(gene, levels = c("DNA (ng/L SW)",
+  mutate(gene = factor(gene, levels = c("DNA (μg/L SW)",
                                         "16Sin extraction efficiency",
-                                        "18S copies/mL SW",
-                                        "18S copies/mL SW * eff",                        
-                                        "18S seq/mL SW")))
+                                        "18S copies/L SW",
+                                        "18S copies/L SW * eff",                        
+                                        "18S seq/L SW")))
 
 
 # Plot surface data
@@ -557,16 +555,16 @@ ggsave(
 ## COI
 ###########
 long_COI_data <- metadata_calc %>%
-  pivot_longer(cols = c("DNA (ng/L SW)",
+  pivot_longer(cols = c("DNA (μg/L SW)",
                         "16Sin extraction efficiency",
-                        "COI copies/mL SW",
-                        "COI copies/mL SW * eff"), 
+                        "COI copies/L SW",
+                        "COI copies/L SW * eff"), 
                names_to = "gene", 
                values_to = "gene_quantity") %>% 
-  mutate(gene = factor(gene, levels = c("DNA (ng/L SW)",
+  mutate(gene = factor(gene, levels = c("DNA (μg/L SW)",
                                         "16Sin extraction efficiency",
-                                        "COI copies/mL SW",
-                                        "COI copies/mL SW * eff")))
+                                        "COI copies/L SW",
+                                        "COI copies/L SW * eff")))
 
 # Plot surface data
 (plot <- long_COI_data %>% 

@@ -57,10 +57,11 @@ hist(metadata$`16Sin extraction efficiency`, xlab = "Extraction Efficiency Coeff
 # [DNA] <- Elution volume <- Volume filtered = [DNA] in SW
 metadata <- metadata %>% 
   mutate(`DNA (ng/L SW)` = (nanodrop_dna * elution_volume)   # DNA ng per filter
-         / `Volume filtered (ml SW)` * 1000)                       # DNA ng / L Seawater
+         / `Volume filtered (ml SW)` * 1000) %>%             # DNA ng / L Seawater
+  mutate(`DNA (μg/L SW)` = `DNA (ng/L SW)` / 1e3)  # 1 μg = 1e3 ng
 
 # Data check
-hist(metadata$`DNA (ng/L SW)`)
+hist(metadata$`DNA (μg/L SW)`)
 
 
 #doubtful of bellow
@@ -76,62 +77,62 @@ hist(metadata$`DNA (ng/L SW)`)
 # qPCR quantities <- tmpl vol <- dilution <- Vol filt
 ### WITHOUT EXTRACTION EFFICIENCIES ###
 metadata <- metadata %>% 
-  mutate(`12S copies/mL SW` = (`12S_qPCR_quantity` / `12S_dilutions`) /   # gene copies per 5 uL considering tmpl dilution
+  mutate(`12S copies/L SW` = (`12S_qPCR_quantity` / `12S_dilutions`) /   # gene copies per 5 uL considering tmpl dilution
            uL_per_qPCR_reaction *                                                 # copies per uL
            elution_volume /                                                       # copies on filter
-           `Volume filtered (ml SW)`,                                                    # copies / mL of SW
+           `Volume filtered (ml SW)` * 1000,                                                    # copies / mL of SW
          
-         `16S copies/mL SW` = (`16S_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
+         `16S copies/L SW` = (`16S_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
            uL_per_qPCR_reaction *                                                 # copies per uL
            elution_volume /                                                       # copies on filter
-           `Volume filtered (ml SW)`,                                                    # copies / mL of SW
+           `Volume filtered (ml SW)` * 1000,                                                    # copies / mL of SW
          
-         `18S copies/mL SW` = (`18S_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
+         `18S copies/L SW` = (`18S_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
            uL_per_qPCR_reaction *                                                 # copies per uL
            elution_volume /                                                       # copies on filter
-           `Volume filtered (ml SW)`,                                                    # copies / mL of SW
+           `Volume filtered (ml SW)` * 1000,                                                    # copies / mL of SW
          
-         `COI copies/mL SW` = (`COI_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
+         `COI copies/L SW` = (`COI_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
            uL_per_qPCR_reaction *                                                 # copies per uL
            elution_volume /                                                       # copies on filter
-           `Volume filtered (ml SW)`                                                    # copies / mL of SW
+           `Volume filtered (ml SW)` * 1000                                                   # copies / mL of SW
   )
 
 
 # qPCR quantities <- tmpl vol <- dilution <- extr. eff. <- Vol filt
 ### WITH EXTRACTION EFFICIENCIES ###
 metadata <- metadata %>% 
-  mutate(`12S copies/mL SW * eff` = (`12S_qPCR_quantity` / `12S_dilutions`) /   # gene copies per 5 uL considering tmpl dilution
+  mutate(`12S copies/L SW * eff` = (`12S_qPCR_quantity` / `12S_dilutions`) /   # gene copies per 5 uL considering tmpl dilution
            uL_per_qPCR_reaction *                                                 # copies per uL
            elution_volume *                                                       # copies on filter
            1/`16Sin extraction efficiency` /                                      # still copies on filter (factoring: efficiency of extracting spike DNA)
-           `Volume filtered (ml SW)`,                                                    # copies / mL of SW
+           `Volume filtered (ml SW)` * 1000,                                                    # copies / mL of SW
          
-         `16S copies/mL SW * eff` = (`16S_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
+         `16S copies/L SW * eff` = (`16S_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
            uL_per_qPCR_reaction *                                                 # copies per uL
            elution_volume *                                                       # copies on filter
            1/`16Sin extraction efficiency` /                                      # still copies on filter (factoring: efficiency of extracting spike DNA)
-           `Volume filtered (ml SW)`,                                                    # copies / mL of SW
+           `Volume filtered (ml SW)` * 1000,                                                    # copies / mL of SW
          
-         `18S copies/mL SW * eff` = (`18S_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
+         `18S copies/L SW * eff` = (`18S_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
            uL_per_qPCR_reaction *                                                 # copies per uL
            elution_volume *                                                       # copies on filter
            1/`16Sin extraction efficiency` /                                      # still copies on filter (factoring: efficiency of extracting spike DNA)
-           `Volume filtered (ml SW)`,                                                    # copies / mL of SW
+           `Volume filtered (ml SW)` * 1000,                                                    # copies / mL of SW
          
-         `COI copies/mL SW * eff` = (`COI_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
+         `COI copies/L SW * eff` = (`COI_qPCR_quantity` / COI_16S_18S_qPCR_dilutions) /   # gene copies per 5 uL considering tmpl dilution
            uL_per_qPCR_reaction *                                                 # copies per uL
            elution_volume *                                                       # copies on filter
            1/`16Sin extraction efficiency` /                                      # still copies on filter (factoring: efficiency of extracting spike DNA)
-           `Volume filtered (ml SW)`                                                    # copies / mL of SW
+           `Volume filtered (ml SW)` * 1000                                                   # copies / mL of SW
   )
 
 
 # Check the data
-hist(metadata$`12S copies/mL SW * eff`)
-hist(metadata$`16S copies/mL SW * eff`)
-hist(metadata$`18S copies/mL SW * eff`)
-hist(metadata$`COI copies/mL SW * eff`)
+hist(metadata$`12S copies/L SW * eff`)
+hist(metadata$`16S copies/L SW * eff`)
+hist(metadata$`18S copies/L SW * eff`)
+hist(metadata$`COI copies/L SW * eff`)
 
 
 
@@ -156,17 +157,17 @@ metadata <- metadata %>%
 # Spike ASV counts <- total read counts <- ratio * Other ASV reads <- Extr. eff. <- volume filtered
 
 metadata <- metadata %>% 
-  mutate(`16S seq/mL SW` = (`16S_spike_copies` * `16S_DADA2_reads` /
+  mutate(`16S seq/L SW` = (`16S_spike_copies` * `16S_DADA2_reads` /
                               `16S_spike_main_ASV`) *                # Spike corrected read counts
            1/`16Sin extraction efficiency` /                             # Extr. eff. corrected read counts             
            COI_16S_18S_PCR_dilutions /                                   # Considering PCR template dilutions
-           `Volume filtered (ml SW)`,                                           # Seqs per mL seawater
+           `Volume filtered (ml SW)` * 1000,                                           # Seqs per mL seawater
          
-          `18S seq/mL SW` = (`18S_spike_copies` * `18S_DADA2_reads` /
+          `18S seq/L SW` = (`18S_spike_copies` * `18S_DADA2_reads` /
                                    `18S_spike_main_ASV`) *                # Spike corrected read counts
             1/`16Sin extraction efficiency` /                             # Extr. eff. corrected read counts             
             COI_16S_18S_PCR_dilutions /                                   # Considering PCR template dilutions
-           `Volume filtered (ml SW)` ,                                            # Seqs per mL seawater
+           `Volume filtered (ml SW)` * 1000                               # Seqs per mL seawater
 
 ### Think here, should I consider PCR tmpl dilutions and equimolar pooling at Seq library prep??? ###
   )

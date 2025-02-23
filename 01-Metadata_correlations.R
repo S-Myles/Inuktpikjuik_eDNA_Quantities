@@ -22,7 +22,7 @@ metadata_calc$Date <- as.Date(metadata_calc$Date)
 # Transect data matrix 
 (plot <- metadata_calc %>%
    ggpairs(columns = c('Date', 'Location', 
-                       'Depth (m)', 'DNA (ng/L SW)',
+                       'Depth (m)', 'DNA (μg/L SW)',
                        '16Sin extraction efficiency'),
            aes(color = Location, alpha = 0.5),
            upper = list(continuous = wrap("cor", size = 5)),
@@ -44,8 +44,8 @@ ggsave(
 
 # 12S
 (plot <- metadata_calc %>%
-  ggpairs(columns = c('DNA (ng/L SW)', '16Sin extraction efficiency', 
-                      '12S copies/mL SW', '12S copies/mL SW * eff', '12S_DADA2_reads'),
+  ggpairs(columns = c('DNA (μg/L SW)', '16Sin extraction efficiency', 
+                      '12S copies/L SW', '12S copies/L SW * eff', '12S_DADA2_reads'),
           aes(color = Location, alpha = 0.5),
           upper = list(continuous = wrap("cor", size = 5)),
           cardinality_threshold = NULL) +
@@ -67,9 +67,9 @@ ggsave(
 
 # 16S
 (plot <- metadata_calc %>%
-  ggpairs(columns = c('DNA (ng/L SW)', '16Sin extraction efficiency',
-                      '16S copies/mL SW', '16S copies/mL SW * eff', '16S_DADA2_reads', 
-                      '16S seq/mL SW'),
+  ggpairs(columns = c('DNA (μg/L SW)', '16Sin extraction efficiency',
+                      '16S copies/L SW', '16S copies/L SW * eff', 
+                      '16S seq/L SW'),
           aes(color = Location, alpha = 0.5),
           upper = list(continuous = wrap("cor", size = 5)),
           cardinality_threshold = NULL) +
@@ -91,9 +91,9 @@ ggsave(
 
 # 18S
 (plot <- metadata_calc %>%
-    ggpairs(columns = c('DNA (ng/L SW)', '16Sin extraction efficiency',
-                        '18S copies/mL SW', '18S copies/mL SW * eff', '18S_DADA2_reads', 
-                        '18S seq/mL SW'),
+    ggpairs(columns = c('DNA (μg/L SW)', '16Sin extraction efficiency',
+                        '18S copies/L SW', '18S copies/L SW * eff', 
+                        '18S seq/L SW'),
           aes(color = Location, alpha = 0.5),
           upper = list(continuous = wrap("cor", size = 5)),
           cardinality_threshold = NULL) +
@@ -115,8 +115,8 @@ ggsave(
 
 # COI
 (plot <- metadata_calc %>%
-    ggpairs(columns = c('DNA (ng/L SW)', '16Sin extraction efficiency',
-                        'COI copies/mL SW', 'COI copies/mL SW * eff'),
+    ggpairs(columns = c('DNA (μg/L SW)', '16Sin extraction efficiency',
+                        'COI copies/L SW', 'COI copies/L SW * eff'),
           aes(color = Location, alpha = 0.5),
           upper = list(continuous = wrap("cor", size = 5)),
           cardinality_threshold = NULL) +
@@ -140,8 +140,8 @@ ggsave(
 
 # Cross-marker matrix
 (plot <- metadata_calc %>%
-    ggpairs(columns = c('12S copies/mL SW','16S copies/mL SW', 
-                        '18S copies/mL SW', 'COI copies/mL SW'),
+    ggpairs(columns = c('12S copies/L SW','16S copies/L SW', 
+                        '18S copies/L SW', 'COI copies/L SW'),
             aes(color = Location, alpha = 0.5),
             upper = list(continuous = wrap("cor", size = 5)),
             cardinality_threshold = NULL) +
