@@ -9,7 +9,7 @@ theme_set(theme_bw())
 
 colorblind_palette <- c("#117733", "#44AA99", "#88CCEE", "#332288",
                         "#DDCC77", "#999933", "#CC6677", "#882255",
-                        "#AA4499", "#DDDDDD") 
+                        "#AA4499", "#DDDDDD", "black") 
 
 set3_palette <- c("#8DD3C7", "#FFFFB3", "#BEBADA", "#FB8072",
                   "#80B1D3", "#FDB462", "#B3DE69", "#FCCDE5",
@@ -47,8 +47,7 @@ ps_melted <- psmelt(S12_cooler_blanks) %>%
                                         "2024-Mar-28",
                                         "2024-Apr-18",
                                         "2024-May-16"
-                                        )))
-
+                                        ))) 
 
 # Identify the top 10 ASVs by cumulative relative abundance across the Cooler blank samples
 top10_asvs <- ps_melted %>%
@@ -57,17 +56,11 @@ top10_asvs <- ps_melted %>%
   summarize(total_abundance = sum(Abundance)) %>% # Sum their relative abundances
   arrange(desc(total_abundance)) %>%            # Order descending
   slice_head(n = 10) %>%                          # Select the top 10
-  pull(Species) %>%                                  # Extract their names
-  factor(levels = c("Fundulus heteroclitus",
-                    "Triglops murrayi",
-                    "Pungitius pungitius",
-                    "Pseudopleuronectes americanus", 
-                    "Pollachius virens", 
-                    "Pholis gunnellus",
-                    "Hyperoplus lanceolatus",
-                    "Clupea harengus",
-                    "Scomber scombrus",
-                    "NA"))
+  pull(Species) 
+
+ps_melted <- ps_melted %>%
+  mutate(Species = ifelse(Species %in% top10_asvs, Species, "Others"),
+         Species = factor(Species, levels = c(rev(top10_asvs), "Others")))
 
 
 # Create the faceted bar plot
@@ -78,11 +71,61 @@ top10_asvs <- ps_melted %>%
   theme_minimal() +
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1),
-    strip.text = element_text(size = 10),
-    legend.position = "right"
+    strip.text = element_text(size = 10)#,
+    #legend.position = "none"
   ) +
-  # Only include top 10 in the legend; assign grey for "Others"
-  scale_fill_manual(values = c(setNames(colorblind_palette, top10_asvs))))
+  scale_fill_manual(values = c(setNames(colorblind_palette, c("Others", top10_asvs)))))
+
+# Save the plot
+ggsave(
+  filename = "outputs/metabarcoding_barplots/S12-BL_rel-abun_sp_barplot.png",
+  plot = plot,
+  width = 14, height = 6,
+  dpi = 300
+)
+
+## Make it quantitative w qPCR data
+# Melt the data for ggplot
+ps_melted <- psmelt(S12_cooler_blanks) %>% 
+  mutate(quantitative_abundance = Abundance * X12S.copies.L.SW) %>% 
+  filter(Depth..m. == 0) %>% 
+  mutate(Location = factor(Location, levels = c("Cooler blank 1",
+                                                "Cooler blank 2")))
+
+# Identify the top 10 ASVs by cumulative relative abundance across the Cooler blank samples
+top10_asvs <- ps_melted %>%
+  group_by(Species) %>%                          # Group by ASV (Species)
+  filter(quantitative_abundance > 0) %>%                         # take out zeros
+  summarize(total_abundance = sum(quantitative_abundance)) %>% # Sum their relative abundances
+  arrange(desc(total_abundance)) %>%            # Order descending
+  slice_head(n = 10) %>%                          # Select the top 10
+  pull(Species)
+
+ps_melted <- ps_melted %>%
+  mutate(Species = factor(Species, levels = rev(top10_asvs)))
+
+
+# Create the faceted bar plot with custom facet titles
+(plot <- ggplot(ps_melted, aes(x = Location, y = quantitative_abundance, fill = Species)) +
+    geom_bar(stat = "identity", position = "stack") +
+    facet_grid(~ Date) +
+    labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
+    theme_minimal() +
+    theme(
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      strip.text = element_text(size = 10)#,
+      #legend.position = "none"
+    ) +
+    # Only include top 10 in the legend; assign grey for "Others"
+    scale_fill_manual(values = c(setNames(colorblind_palette, top10_asvs))))
+
+# Save the plot
+ggsave(
+  filename = "outputs/metabarcoding_barplots/S12-BL_copies_sp_barplot.png",
+  plot = plot,
+  width = 14, height = 6,
+  dpi = 300
+)
 
 
 
@@ -122,19 +165,11 @@ top10_asvs <- ps_melted %>%
   summarize(total_abundance = sum(Abundance)) %>% # Sum their relative abundances
   arrange(desc(total_abundance)) %>%            # Order descending
   slice_head(n = 10) %>%                          # Select the top 10
-  pull(Phylum)  %>%                             # Extract their names
-  factor(levels = c("Desulfobacterota",
-                    "Cyanobacteria",
-                    "Nitrospinota",
-                    "Crenarchaeota",
-                    "WPS-2",
-                    "Firmicutes", 
-                    "Actinobacteriota", 
-                    "Planctomycetota",
-                    "Bacteroidota",
-                    "Proteobacteria"))
+  pull(Phylum)                             # Extract their names
 
 
+ps_melted <- ps_melted %>%
+  mutate(Phylum = factor(Phylum, levels = rev(top10_asvs)))
 
 
 # Create the faceted bar plot
@@ -145,12 +180,64 @@ top10_asvs <- ps_melted %>%
     theme_minimal() +
     theme(
       axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10),
-      legend.position = "right"
+      strip.text = element_text(size = 10)#,
+      #legend.position = "none"
     ) +
     # Only include top 10 in the legend; assign grey for "Others"
     scale_fill_manual(values = c(setNames(set3_palette, top10_asvs))))
 
+# Save the plot
+ggsave(
+  filename = "outputs/metabarcoding_barplots/S16-BL_rel-abun_sp_barplot.png",
+  plot = plot,
+  width = 14, height = 6,
+  dpi = 300
+)
+
+
+
+## Make it quantitative w qPCR data
+# Melt the data for ggplot
+ps_melted <- psmelt(S16_cooler_blanks) %>% 
+  mutate(quantitative_abundance = Abundance * X16S.copies.L.SW) %>% 
+  filter(Depth..m. == 0) %>% 
+  mutate(Location = factor(Location, levels = c("Cooler blank 1",
+                                                "Cooler blank 2")))
+
+# Identify the top 10 ASVs by cumulative relative abundance across the Cooler blank samples
+top10_asvs <- ps_melted %>%
+  group_by(Phylum) %>%                          # Group by ASV (Species)
+  filter(quantitative_abundance > 0) %>%                         # take out zeros
+  summarize(total_abundance = sum(quantitative_abundance)) %>% # Sum their relative abundances
+  arrange(desc(total_abundance)) %>%            # Order descending
+  slice_head(n = 10) %>%                          # Select the top 10
+  pull(Phylum)
+
+ps_melted <- ps_melted %>%
+  mutate(Phylum = factor(Phylum, levels = rev(top10_asvs)))
+
+
+# Create the faceted bar plot with custom facet titles
+(plot <- ggplot(ps_melted, aes(x = Location, y = quantitative_abundance, fill = Phylum)) +
+    geom_bar(stat = "identity", position = "stack") +
+    facet_grid(~ Date) +
+    labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
+    theme_minimal() +
+    theme(
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      strip.text = element_text(size = 10)#,
+      #legend.position = "none"
+    ) +
+    # Only include top 10 in the legend; assign grey for "Others"
+    scale_fill_manual(values = c(setNames(set3_palette, top10_asvs))))
+
+# Save the plot
+ggsave(
+  filename = "outputs/metabarcoding_barplots/S16-BL_copies_sp_barplot.png",
+  plot = plot,
+  width = 14, height = 6,
+  dpi = 300
+)
 
 
 
@@ -189,17 +276,10 @@ top10_asvs <- ps_melted %>%
   summarize(total_abundance = sum(Abundance)) %>% # Sum their relative abundances
   arrange(desc(total_abundance)) %>%            # Order descending
   slice_head(n = 10) %>%                          # Select the top 10
-  pull(Phylum)  %>%                        # Extract their names
-  factor(levels = c("Phragmoplastophyta",
-                    "Rotifera",
-                    "Ochrophyta",
-                    "Protalveolata",
-                    "Diatomea",
-                    "Mollusca", 
-                    "Ciliophora", 
-                    "Arthropoda",
-                    "Dinoflagellata",
-                    "Ascomycota"))
+  pull(Phylum)
+
+ps_melted <- ps_melted %>%
+  mutate(Phylum = factor(Phylum, levels = rev(top10_asvs)))
 
 
 # Create the faceted bar plot
@@ -210,16 +290,64 @@ top10_asvs <- ps_melted %>%
     theme_minimal() +
     theme(
       axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10),
-      legend.position = "right"
+      strip.text = element_text(size = 10)#,
+      #legend.position = "none"
+    ) +
+    # Only include top 10 in the legend; assign grey for "Others"
+    scale_fill_manual(values = c(setNames(nature_palette, top10_asvs))))
+
+# Save the plot
+ggsave(
+  filename = "outputs/metabarcoding_barplots/S18-BL_rel-abun_sp_barplot.png",
+  plot = plot,
+  width = 14, height = 6,
+  dpi = 300
+)
+
+
+## Make it quantitative w qPCR data
+# Melt the data for ggplot
+ps_melted <- psmelt(S18_cooler_blanks) %>% 
+  mutate(quantitative_abundance = Abundance * X18S.copies.L.SW) %>% 
+  filter(Depth..m. == 0) %>% 
+  mutate(Location = factor(Location, levels = c("Cooler blank 1",
+                                                "Cooler blank 2")))
+
+# Identify the top 10 ASVs by cumulative relative abundance across the Cooler blank samples
+top10_asvs <- ps_melted %>%
+  group_by(Phylum) %>%                          # Group by ASV (Species)
+  filter(quantitative_abundance > 0) %>%                         # take out zeros
+  summarize(total_abundance = sum(quantitative_abundance)) %>% # Sum their relative abundances
+  arrange(desc(total_abundance)) %>%            # Order descending
+  slice_head(n = 10) %>%                          # Select the top 10
+  pull(Phylum)
+
+ps_melted <- ps_melted %>%
+  mutate(Phylum = factor(Phylum, levels = rev(top10_asvs)))
+
+
+# Create the faceted bar plot with custom facet titles
+(plot <- ggplot(ps_melted, aes(x = Location, y = quantitative_abundance, fill = Phylum)) +
+    geom_bar(stat = "identity", position = "stack") +
+    facet_grid(~ Date) +
+    labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
+    theme_minimal() +
+    theme(
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      strip.text = element_text(size = 10)#,
+      #legend.position = "none"
     ) +
     # Only include top 10 in the legend; assign grey for "Others"
     scale_fill_manual(values = c(setNames(nature_palette, top10_asvs))))
 
 
-
-
-
+# Save the plot
+ggsave(
+  filename = "outputs/metabarcoding_barplots/S18-BL_copies_sp_barplot.png",
+  plot = plot,
+  width = 14, height = 6,
+  dpi = 300
+)
 
 
 
@@ -265,6 +393,10 @@ top10_asvs <- ps_melted %>%
   slice_head(n = 10) %>%                          # Select the top 10
   pull(Species)
 
+ps_melted <- ps_melted %>%
+  mutate(Species = factor(Species, levels = rev(top10_asvs)))
+
+
 # Create the faceted bar plot with custom facet titles
 (plot <- ggplot(ps_melted, aes(x = Location, y = Abundance, fill = Species)) +
     geom_bar(stat = "identity", position = "stack") +
@@ -302,16 +434,20 @@ ps_melted <- psmelt(S12_physeq_agg) %>%
                                                 "Tufts Cove",
                                                 "McNabs Island")))
 
+ps_melted <- ps_melted %>%
+  mutate(Species = factor(Species, levels = rev(top10_asvs)))
+
+
 # Create the faceted bar plot with custom facet titles
 (plot <- ggplot(ps_melted, aes(x = Location, y = quantitative_abundance, fill = Species)) +
     geom_bar(stat = "identity", position = "stack") +
     facet_grid(~ Date) +
-    labs(x = "Sampling Location", y = "Quantitative Abundance") +
+    labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
     theme_minimal() +
     theme(
       axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10),
-      legend.position = "none"
+      strip.text = element_text(size = 10)#,
+      #legend.position = "none"
     ) +
     # Only include top 10 in the legend; assign grey for "Others"
     scale_fill_manual(values = c(setNames(colorblind_palette, top10_asvs))))
@@ -374,6 +510,9 @@ top10_asvs <- ps_melted %>%
   slice_head(n = 10) %>%                          # Select the top 10
   pull(Phylum)
 
+ps_melted <- ps_melted %>%
+  mutate(Phylum = factor(Phylum, levels = rev(top10_asvs)))
+
 
 # Create the faceted bar plot with custom facet titles
 (plot <- ggplot(ps_melted, aes(x = Location, y = Abundance, fill = Phylum)) +
@@ -383,8 +522,8 @@ top10_asvs <- ps_melted %>%
     theme_minimal() +
     theme(
       axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10),
-      legend.position = "none"
+      strip.text = element_text(size = 10)#,
+      #legend.position = "none"
     ) +
     # Only include top 10 in the legend; assign grey for "Others"
     scale_fill_manual(values = c(setNames(set3_palette, top10_asvs))))
@@ -403,12 +542,12 @@ ggsave(
 (plot <- ggplot(ps_melted, aes(x = Location, y = quantitative_abundance, fill = Phylum)) +
     geom_bar(stat = "identity", position = "stack") +
     facet_grid(~ Date) +
-    labs(x = "Sampling Location", y = "Quantitative Abundance") +
+    labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
     theme_minimal() +
     theme(
       axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10),
-      legend.position = "none"
+      strip.text = element_text(size = 10)#,
+      #legend.position = "none"
     ) +
     # Only include top 10 in the legend; assign grey for "Others"
     scale_fill_manual(values = c(setNames(set3_palette, top10_asvs))))
@@ -440,7 +579,7 @@ S18_physeq_agg <- S18_taxfilt_data %>%
 # Melt the data for ggplot
 ps_melted <- psmelt(S18_physeq_agg) %>% 
   mutate(quantitative_abundance = Abundance * X18S.copies.L.SW) %>% ## Make it quantitative w qPCR data
-  filter(Depth..m. < 2) %>% 
+  filter(Depth..m. == 1) %>% 
   mutate(Location = factor(Location, levels = c("Cooler blank 1",
                                                 "Cooler blank 2",
                                                 "Sackville River", 
@@ -473,6 +612,9 @@ top10_asvs <- ps_melted %>%
   slice_head(n = 10) %>%                          # Select the top 10
   pull(Phylum)
 
+ps_melted <- ps_melted %>%
+  mutate(Phylum = factor(Phylum, levels = rev(top10_asvs)))
+
 
 # Create the faceted bar plot with custom facet titles
 (plot <- ggplot(ps_melted, aes(x = Location, y = Abundance, fill = Phylum)) +
@@ -482,8 +624,8 @@ top10_asvs <- ps_melted %>%
     theme_minimal() +
     theme(
       axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10),
-      legend.position = "none"
+      strip.text = element_text(size = 10)#,
+      #legend.position = "none"
     ) +
     # Only include top 10 in the legend; assign grey for "Others"
     scale_fill_manual(values = c(setNames(nature_palette, top10_asvs))))
@@ -501,12 +643,12 @@ ggsave(
 (plot <- ggplot(ps_melted, aes(x = Location, y = quantitative_abundance, fill = Phylum)) +
     geom_bar(stat = "identity", position = "stack") +
     facet_grid(~ Date) +
-    labs(x = "Sampling Location", y = "Quantitative Abundance") +
+    labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
     theme_minimal() +
     theme(
       axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10),
-      legend.position = "none"
+      strip.text = element_text(size = 10)#,
+      #legend.position = "none"
     ) +
     # Only include top 10 in the legend; assign grey for "Others"
     scale_fill_manual(values = c(setNames(nature_palette, top10_asvs))))
@@ -518,3 +660,4 @@ ggsave(
   width = 14, height = 6,
   dpi = 300
 )
+

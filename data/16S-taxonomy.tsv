@@ -2324,7 +2324,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 660ce17df9619e52f69be7996116013b	Bacteria	 Spirochaetota	 Spirochaetia	 Spirochaetales	 Spirochaetaceae	 Sediminispirochaeta	 uncultured_bacterium	0.9686913913409672
 6623b952f5bd7513300cee92ad8a31a9	Bacteria	 Bacteroidota	 Bacteroidia	 Bacteroidales	 Prolixibacteraceae	 Draconibacterium		0.999941966
 6623bfdef5832360441288a0ec681467	Bacteria	 Proteobacteria	 Gammaproteobacteria	 OM182_clade	 OM182_clade	 OM182_clade	 marine_gamma	0.9495423743720485
-6627e1d12b5ac0a22b999ef1c3432937	Unassigned							0.6289943726741911
+6627e1d12b5ac0a22b999ef1c3432937	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.6289943726741911
 662daf7a8f6937f7ea56582ec791d27b	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Alteromonadales	 Colwelliaceae	 Colwellia		0.9945104875464148
 663f890d4e46ece264277e2d425560ea	Bacteria	 Proteobacteria	 Alphaproteobacteria	 SAR11_clade	 Clade_II	 Clade_II		0.9895915306172053
 6651d735e9e3faac3f5db3b4678c3272	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 KF-JG30-B3	 KF-JG30-B3	 uncultured_bacterium	0.8578639484065429
@@ -2376,7 +2376,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 68c770e27e83d38e1f6d14710845d54b	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 Beijerinckiaceae	 Bosea		0.9999998964614119
 68c89e67b7129e83d5f7e5490c2d3ada	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Steroidobacterales	 Woeseiaceae	 Woeseia		0.9263046369473725
 691f057bf0e98d764322a94cb24b74d5	Bacteria	 Firmicutes	 Clostridia	 Lachnospirales	 Lachnospiraceae	 Coprococcus	 unidentified	0.9928586732159058
-6927f580b8f136c5cca4ab3c2a189cd6	Unassigned							0.6464926373302973
+6927f580b8f136c5cca4ab3c2a189cd6	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.6464926373302973
 6951b7fb1879812801a98ede0a846576	Bacteria							0.9950342873630246
 69576d8f19b866f77dbadceee0b832ea	Bacteria							0.9931940352145013
 6960cd099b2ac15f3b3e57f275649d6f	Bacteria	 Verrucomicrobiota	 Verrucomicrobiae	 Chthoniobacterales	 Terrimicrobiaceae	 FukuN18_freshwater_group		0.9999997396677699
@@ -2862,7 +2862,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 7c1b3c04a8c0b3680b10f57fe35a2f03	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Coxiellales	 Coxiellaceae	 Coxiella	 uncultured_bacterium	0.7180168686094929
 7c2625268fb830d67919b62aefbd894c	Bacteria	 Bacteroidota	 Bacteroidia	 Sphingobacteriales	 Lentimicrobiaceae	 Lentimicrobium		0.9999999999999776
 7c27b8d058831e12255075a55e16a9c4	Bacteria	 Bacteroidota	 Bacteroidia	 Flavobacteriales	 Flavobacteriaceae	 NS5_marine_group		0.9999570668320563
-7c3b82f854d16d7a3b48233f8560a286	Unassigned							0.6697446981096976
+7c3b82f854d16d7a3b48233f8560a286	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.6697446981096976
 7c49cc94b800e0e63489184774ddc57c	Bacteria	 Desulfobacterota	 uncultured	 uncultured	 uncultured	 uncultured	 uncultured_delta	0.9873588212045765
 7c4b68fa325eb830ea918ef59952925d	Bacteria	 Bdellovibrionota	 Bdellovibrionia	 Bdellovibrionales	 Bdellovibrionaceae	 OM27_clade		0.9999999024416997
 7c5922726f0bf58aee4dea018bb7a892	Bacteria	 Bacteroidota	 Kapabacteria	 Kapabacteriales	 Kapabacteriales	 Kapabacteriales	 uncultured_organism	0.778774651
@@ -2872,7 +2872,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 7c8dd6badd1d771ddf0520bebb1866c3	Bacteria	 Bacteroidota	 Bacteroidia	 Flavobacteriales	 NS9_marine_group	 NS9_marine_group		0.9999999999216821
 7c9c44b01dce94adb1adb7d6983f7b48	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Coxiellales	 Coxiellaceae	 Coxiella		0.9999862909337041
 7c9dd139c77faee80c25b39ae86fbd49	Unassigned							0.6834777454002136
-7cb048d8fb77ad8ccb85836f1a1ad8c1	Unassigned							0.5981117545740965
+7cb048d8fb77ad8ccb85836f1a1ad8c1	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.5981117545740965
 7cba6dba1cca72ed94f1808cbceeeab0	Archaea	 Nanoarchaeota	 Nanoarchaeia	 Woesearchaeales	 SCGC_AAA011-D5	 SCGC_AAA011-D5		0.9750055384007409
 7cc3900f380fd5182a6165c83cda335b	Bacteria	 Bacteroidota	 Bacteroidia					0.9995550455656443
 7cce1433c939e85105e046c77faf9556	Bacteria	 Fusobacteriota	 Fusobacteriia	 Fusobacteriales	 Fusobacteriaceae	 Fusobacterium	 Fusobacterium_mortiferum	0.9690632440865686
@@ -3199,7 +3199,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 8a080011e1f2843d8562c513639c1f66	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Xanthomonadales	 Xanthomonadaceae	 Stenotrophomonas	 Stenotrophomonas_nitritireducens	0.9510481764381633
 8a15a7b36c9dd64f74dc024f8a3a9451	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhodobacterales	 Rhodobacteraceae	 Roseobacter_clade_NAC11-7_lineage	 uncultured_bacterium	0.788412787
 8a2a33fa27489985ba256128ea0cb5d2	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Kiloniellales	 Kiloniellaceae	 uncultured	 uncultured_beta	0.976439748
-8a2b4483c11914870d4a3d6f8218e65e	Unassigned							0.6728762240793542
+8a2b4483c11914870d4a3d6f8218e65e	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.6728762240793542
 8a3198373263544f49c1578e65163799	Bacteria							0.9999999063032728
 8a328af199fb2b7978e787b81adf8cc0	Bacteria	 Cyanobacteria	 Cyanobacteriia	 Chloroplast	 Chloroplast	 Chloroplast		0.9999999999988706
 8a3465422409cc53ccefa6614fb24d63	Bacteria	 Bacteroidota	 Bacteroidia	 Cytophagales	 Cyclobacteriaceae	 uncultured		0.9970307227120759
@@ -3399,7 +3399,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 933ebf1b1027152e9833f1b85809b4e4	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Micavibrionales	 Micavibrionaceae	 uncultured	 uncultured_bacterium	0.9884526162479467
 934545da41a2aaae09253aec77b18cbd	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Oceanospirillales	 Pseudohongiellaceae	 Pseudohongiella		0.999999844
 93573d71102fb9d43a7ec56074c3d483	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhodobacterales	 Rhodobacteraceae	 Roseibacterium	 Roseibacterium_sp.	0.8897485073846925
-935e2b1a05fbc28dd9ce917c3ff7cf7f	Unassigned							0.6318884682965709
+935e2b1a05fbc28dd9ce917c3ff7cf7f	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.6318884682965709
 936f8212f3cd159e32920c873008c2a5	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Pseudomonadales	 Pseudomonadaceae	 Pseudomonas		0.9999821517108156
 937d7e2acc591d52214d96bfd8246e36	Bacteria	 Bacteroidota	 Bacteroidia	 Sphingobacteriales	 Lentimicrobiaceae	 Lentimicrobiaceae	 uncultured_Bacteroidetes	0.7516843811083872
 9382ea6ae6d34d9a913877a95a1284bd	Bacteria	 Desulfobacterota	 Desulfovibrionia	 Desulfovibrionales	 Desulfovibrionaceae	 Desulfovibrio	 Desulfovibrio_sp.	0.7739172253488793

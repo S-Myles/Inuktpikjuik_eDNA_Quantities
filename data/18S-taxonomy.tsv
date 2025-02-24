@@ -33,7 +33,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 01a89edd0a52dc71414e11a247382566	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales	 uncultured	 uncultured_eukaryote	0.91175728
 01b6c9b0f9b9d800cca499de250d571a	Eukaryota	 Chlorophyta	 Prasinophytae	 Prasinophytae	 Prasinophytae	 Prasinophytae	 Pterosperma_cristatum	0.997222866
 01c4c90d199257ff932dce332e18f02a	Eukaryota	 Dinoflagellata	 Dinophyceae					0.9633669075917111
-01cc11cd5ef9fe68a257e674d30869e1	Eukaryota							0.9287710734370455
+01cc11cd5ef9fe68a257e674d30869e1	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9287710734370455
 01ee16d419dc7c789c169aed5daf7b4b	Eukaryota	 Labyrinthulomycetes	 uncultured	 uncultured	 uncultured	 uncultured	 uncultured_eukaryote	0.981585055
 01f7752ca5994f9e515f84c5b6817da1	Eukaryota	 Incertae_Sedis	 Incertae_Sedis	 Incertae_Sedis	 Incertae_Sedis	 Pirsonia		0.9999907433310232
 0209fe6f6dd31ebceaee775a031ae3bf	Eukaryota	 Dinoflagellata	 Dinophyceae	 Gymnodiniphycidae	 Kareniaceae	 Karlodinium	 uncultured_marine	0.9694247758641088
@@ -235,7 +235,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 0aeb4622345f55424b9042cb5059694c	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales	 Amoebophrya	 uncultured_eukaryote	0.9887121889641305
 0af152b32e766154fefc7408c6fc72d3	Eukaryota	 Annelida	 Polychaeta	 Terebellida	 Terebellida	 Terebellida		0.9999823376325566
 0af516f412a8606847f200d2a89637a6	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales_Group_II	 Syndiniales_Group_II	 uncultured_eukaryote	0.8689272521906656
-0afc51ce8618a2ca7b4a1f472c22faf0	Eukaryota							0.9404358116050016
+0afc51ce8618a2ca7b4a1f472c22faf0	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9404358116050016
 0b043232c7965de956da82345401725c	Eukaryota	 Ascomycota	 Sordariomycetes	 Hypocreales	 Hypocreales	 Drechmeria	 Drechmeria_coniospora	0.9703630555340677
 0b0e59c61db678db0fc926e608a1ff61	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales	 Amoebophrya	 Amoebophrya_sp.	0.9997181670296933
 0b120ee46d736445dc813971d397d52d	Eukaryota	 Holozoa	 Filasterea	 Ministeriida	 Capsasporidae	 Marine_Group	 uncultured_eukaryote	0.7576997280518656
@@ -541,7 +541,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 1953300e8516f0eaf778379b5a891497	Eukaryota	 Cercozoa	 Thecofilosea	 Ebriacea	 Ebriacea	 Ebria	 uncultured_eukaryote	0.7439248064426568
 1953c5a23ad3cdd657d500d7c22e1adc	Eukaryota	 Holozoa	 Choanoflagellida	 Clade_L	 Clade_L	 Clade_L	 uncultured_freshwater	0.9795558111069219
 19593d39b2200fee53f3b08d9e787866	Eukaryota	 Porifera	 Demospongiae	 Suberitida	 Suberitida	 Suberitida		0.9795361035306211
-195b6399c500737437a66cc3920e2c22	Eukaryota							0.9377148220818468
+195b6399c500737437a66cc3920e2c22	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9377148220818468
 195ba31b1cbad0b8398d6be8bea58130	Eukaryota	 Arthropoda	 Maxillopoda	 Harpacticoida	 Harpacticoida	 Harpacticoida	 Stenhelia_sp.	0.9018783650513125
 1967c8d2b4320d9357b562afb76f4492	Eukaryota							0.9466247733655011
 197c0e533ba78a96597011af9fb02dec	Eukaryota	 Dinoflagellata	 Dinophyceae	 Gonyaulacales	 Gonyaulacales	 Alexandrium		0.9999999999307495
@@ -622,7 +622,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 1d7894d2942c406a0931def80457416d	Eukaryota	 Cnidaria	 Hydrozoa	 Leptothecata	 Leptothecata	 Leptothecata	 Obelia_dichotoma	0.7889511154066842
 1d81ce289342380cad6257115fa08c3a	Eukaryota	 MAST-12	 MAST-12B	 MAST-12B	 MAST-12B	 MAST-12B	 uncultured_marine	0.7217792418922853
 1d84ffcd1f769ba77299a9bde0884c7f	Eukaryota	 Chlorophyta	 Trebouxiophyceae	 Trebouxiophyceae	 Trebouxiophyceae	 Trebouxiophyceae	 uncultured_Nannochloris	0.7868843964127161
-1dbe403042a5bb4fff7908a74be37802	Eukaryota							0.9328962193391641
+1dbe403042a5bb4fff7908a74be37802	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9328962193391641
 1dc789c07e302727ec60f03bdc27d04d	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales_Group_II	 Syndiniales_Group_II	 uncultured_marine	0.9997499024463078
 1dcb4654ee0821af1e750d858c87e38f	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales_Group_II	 Syndiniales_Group_II	 uncultured_marine	0.9675452449913323
 1dcdaa4e87828746abc1b8d19aaaca80	Eukaryota	 Dinoflagellata	 Dinophyceae					0.9449353178963258
@@ -731,7 +731,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 233282e54acec8992807ee5127fc461f	Eukaryota	 MAST-1	 MAST-1B	 MAST-1B	 MAST-1B	 MAST-1B	 uncultured_eukaryote	0.9996612407467232
 2340e13c51e805be632521cffedacc83	Eukaryota	 Chlorophyta	 Prasinophytae	 Prasinophytae	 Prasinophytae	 Prasinophytae	 Pterosperma_cristatum	0.9928210169239032
 23516c65cc26d948551d500b6ef87e6a	Eukaryota	 Florideophycidae	 Rhodymeniophycidae	 Rhodymeniophycidae	 Rhodymeniophycidae	 Rhodymeniophycidae	 Mastocarpus_stellatus	0.9998307503686231
-23837113405d1ea111642e0a987156b7	Eukaryota							0.9322573774162752
+23837113405d1ea111642e0a987156b7	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9322573774162752
 2383bc7c4f92d27b6e550711980435b3	Eukaryota	 Ochrophyta	 Chrysophyceae	 Ochromonadales	 Ochromonadales	 Dinobryon	 uncultured_freshwater	0.9643511214307714
 238562a9be02e8cb2547c78a5d836da0	Eukaryota							0.9999999999999781
 2393a2139644b54c9f4b4e50791dc4f1	Eukaryota	 Dinoflagellata	 Dinophyceae					0.9829006691485662
@@ -1696,7 +1696,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 51d5ddc1a041bf5924607c67152d6fa7	Eukaryota							0.9999999999999795
 51ddf0d0ade6abf7b38d3f12f97bd9f1	Eukaryota	 Chytridiomycota	 Chytridiomycetes	 Spizellomycetales	 Olpidiaceae	 Olpidium	 uncultured_fungus	0.9865114953512629
 51f111545a983e5946b601e12430f1c9	Eukaryota	 Dinoflagellata	 Dinophyceae					0.8959427742160005
-51fea8429a5952bbcee2dc0ab1e25ba3	Eukaryota							0.9433454254514158
+51fea8429a5952bbcee2dc0ab1e25ba3	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9433454254514158
 521d6b8e30c1dda420b21822528b15b9	Eukaryota	 Cercozoa	 Thecofilosea					0.9999999560886114
 5220163b9fc1754ff3d365453943f1fa	Eukaryota	 Ciliophora	 Intramacronucleata	 Spirotrichea	 Choreotrichia	 Rimostrombidium	 Rimostrombidium_veniliae	0.9990382110728572
 52320c344b88275833fe5d6d66f5442e	Eukaryota	 Ctenophora	 Tentaculata	 Cydippida	 Cydippida	 Cydippida	 Undescribed_mertensiid	0.9946472610139853
@@ -1775,7 +1775,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 560b65c15cbbcbe6a38344a0eb263ca4	Eukaryota	 Ciliophora	 Intramacronucleata	 Conthreep	 Phyllopharyngea	 Phyllopharyngea	 Hypocoma_acinetarum	1
 5637c5913f396aeec3a68cc1ce9559c2	Eukaryota	 Chlorophyta	 Mamiellophyceae	 DSGM-81	 DSGM-81	 DSGM-81	 uncultured_eukaryote	0.9429688828160827
 564da83b376f6b7b53a3da6c59ddf4a3	Eukaryota							0.9999999999999993
-564ecbae31cbd89206dbab2270b50e7b	Eukaryota							0.922771958
+564ecbae31cbd89206dbab2270b50e7b	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.922771958
 565b5c02a7dc304812ae0fdd00ed1df7	Eukaryota	 Dinoflagellata	 Dinophyceae					0.9338869212355397
 565c12a6352810541781205d0d484571	Eukaryota	 Cercozoa	 Phytomyxea	 Phytomyxea	 Phytomyxea	 Phagomyxa	 Phagomyxa_bellerocheae	0.9999866693027653
 567ccb48145ac8a34fa2cd14c743f430	Eukaryota	 Dinoflagellata	 Dinophyceae					0.9228924949575458
@@ -2586,13 +2586,13 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 7e0bc242de5fdc4811e2c75f994db698	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales_Group_II	 Syndiniales_Group_II	 uncultured_eukaryote	0.9877222273844042
 7e121a7044035a5cc377627b59b8a03b	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales_Group_II	 Syndiniales_Group_II	 uncultured_eukaryote	0.8317275205820471
 7e1d816661df5f37fdd87608bb72641a	Eukaryota	 Cryptomycota	 LKM11	 LKM11	 LKM11	 LKM11	 uncultured_fungus	0.7842576365282314
-7e24abc7d9399b5b284e8850f9fa46c2	Eukaryota							0.9327295766915638
+7e24abc7d9399b5b284e8850f9fa46c2	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9327295766915638
 7e2b8cb3998060cf1047aa8a7f4b9699	Eukaryota	 Ciliophora	 Intramacronucleata	 Spirotrichea	 Oligotrichia	 uncultured	 uncultured_ciliate	0.9017443768824666
 7e3ade1d6b4d204bfd6064685883ecc0	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales				0.999993201
 7e51134342d0153a279cade98b832c8b	Eukaryota	 Picozoa	 Picozoa	 Picozoa	 Picozoa	 Picozoa	 uncultured_biliphyte	0.9999306242614519
 7e514f38e35e218410eaba8f90e0a696	Eukaryota	 Holozoa	 Choanoflagellida	 Clade_L	 Clade_L	 Clade_L	 uncultured_freshwater	0.9997976803553937
 7e5ceabdfe99b4443c393ba8326e3499	Eukaryota	 Porifera	 Demospongiae	 Poecilosclerida	 Poecilosclerida	 Poecilosclerida	 Myxilla_fimbriata	0.7943705550511307
-7e6ba281ad3b90348e22392b9458af74	Eukaryota							0.935154045
+7e6ba281ad3b90348e22392b9458af74	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.935154045
 7e6c5702ebb9b9aa7aab087c16e40b98	Eukaryota	 MAST-4	 MAST-4	 MAST-4	 MAST-4	 MAST-4	 uncultured_eukaryote	0.8306386695882085
 7e70af289a206771d3ec8a934fa0190e	Eukaryota	 Ciliophora	 Intramacronucleata	 Spirotrichea	 Choreotrichia	 uncultured		0.9882146642667881
 7e726bb3c3722c8e2224dd989259a815	Eukaryota	 Ochrophyta	 Ochrophyta	 Ochrophyta	 Ochrophyta	 Bolidomonas		0.9968011921278621
@@ -2630,7 +2630,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 7f9be839d83e254d32395659ffac4d32	Eukaryota	 Ciliophora	 Intramacronucleata	 Conthreep	 Phyllopharyngea	 Ephelota	 Ephelota_gigantea	0.9639567983661721
 7fa16eecdc8c08df1c590394687dcd21	Eukaryota	 Dinoflagellata	 Dinophyceae					0.9995672850239655
 7fbb3949d9dfca53a1937d28c464149d	Eukaryota							0.9999999999984062
-7fbcd52cb07a2754163af9ce7fac1af6	Eukaryota							0.9501632465860618
+7fbcd52cb07a2754163af9ce7fac1af6	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9501632465860618
 7fc31eb3fa94191af21556e2f90e2538	Eukaryota	 Dinoflagellata	 Dinophyceae					0.9755180927191475
 7fc3a8100f3fa6ad8b54f49272107b18	Eukaryota	 Picozoa	 Picomonadida	 Picomonadida	 Picomonadida	 Picomonadida	 uncultured_eukaryote	0.759979129
 7fd2aa42f45289d7ecc6d298075c3973	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales	 Amoebophrya	 Amoebophrya_sp.	0.9319690818685725
@@ -2979,7 +2979,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 8f99f4d009f9c2395d530fd0bd22b0d8	Eukaryota							0.9999999999999954
 8fc212d16a2264a70428ce23ae566dae	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales_Group_II	 Syndiniales_Group_II	 uncultured_eukaryote	0.7251847463345334
 8fdb3711c6a97134fd26eeca1d754a85	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales_Group_I	 Syndiniales_Group_I	 uncultured_eukaryote	0.7854315991664712
-8ffb92a6561136a28bc53d73791bf343	Eukaryota							0.9367401904575836
+8ffb92a6561136a28bc53d73791bf343	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9367401904575836
 8ffcf011fb4b2c6baf321d74f5216a07	Eukaryota	 uncultured	 uncultured	 uncultured	 uncultured	 uncultured	 eukaryote_clone	0.7365540554024553
 9013156900801cc8e46b488a321f0ed1	Eukaryota	 Apicomplexa	 Conoidasida	 Gregarinasina	 Eugregarinorida	 LEMD098	 uncultured_Eugregarinida	0.9999999999999147
 9015759a25c8c317ba7dde9cf74c0c3f	Eukaryota	 Dinoflagellata	 Dinophyceae	 Gymnodiniphycidae				0.7010286164015253
@@ -3101,7 +3101,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 95bebbf2b81fca74588c478aaab81d38	Eukaryota	 Apusomonadidae	 Apusomonadidae	 Apusomonadidae	 Apusomonadidae	 Amastigomonas	 uncultured_eukaryote	0.839215074
 95cc81ee33121bf0a1f90a5cb9dfd2be	Eukaryota	 Cercozoa	 Thecofilosea	 Cryomonadida	 Ventrifissuridae	 Ventrifissuridae		0.988123539
 95f0d04861a0212ae5329f4cf750e286	Eukaryota	 Dinoflagellata	 Dinophyceae					0.9007183743884212
-95f6e4b4e229f5d0cea138ca5103d394	Eukaryota							0.9414135925927739
+95f6e4b4e229f5d0cea138ca5103d394	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9414135925927739
 95ffadf906dc960ac62204b94f40857b	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales	 Amoebophrya	 uncultured_alveolate	0.999997409
 961540cc711e850505fcd37ee6233949	Eukaryota	 Ciliophora	 Intramacronucleata	 Conthreep	 Oligohymenophorea	 Scuticociliatia		0.991188368
 96166e2c268c0238f6358101e2cd9fef	Eukaryota							0.9999999630348059
@@ -3146,7 +3146,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 97de9ef105a754f437ed3319adbf0ecf	Eukaryota	 Ochrophyta	 Chrysophyceae	 Ochromonadales	 Ochromonadales	 Paraphysomonas		0.9858978691567369
 97e467b76bec501c2556de93a8ab2c09	Eukaryota	 Prymnesiophyceae	 Prymnesiophyceae	 Prymnesiales	 Prymnesiales			0.9380420441772539
 97f133b27ef44f50e9e8df1662d4f806	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales	 Amoebophrya	 uncultured_dinoflagellate	0.9724710668339067
-97f3338a4c6e05c487fcd16db40977bb	Eukaryota							0.9434417795727349
+97f3338a4c6e05c487fcd16db40977bb	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9434417795727349
 980e624080e1dfa35a6c8d6a3b7d9c1c	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales_Group_II	 Syndiniales_Group_II		0.9951579487553115
 98105b908cff7913bd11855b6f227330	Eukaryota	 Dinoflagellata	 Dinophyceae					0.9274160538395146
 9812cb20a247cd976ae62bc18524869a	Eukaryota	 Holozoa	 Choanoflagellida	 Acanthoecida	 Acanthoecidae	 Pleurasiga	 uncultured_eukaryote	0.9718117653834566
@@ -3296,7 +3296,7 @@ ASV_ID	Domain	Phylum	Class	Order	Family	Genus	Species	Confidence
 9f694d61bf2b3718933ad89096747081	Eukaryota	 Annelida	 Polychaeta	 Phyllodocida	 Phyllodocida	 Phyllodocida	 Alitta_succinea	0.9999999110218067
 9f72c8fb145127647678232762f3af4a	Eukaryota	 Holozoa	 Choanoflagellida	 Acanthoecida	 Acanthoecidae	 Acanthoecidae	 Acanthoeca_sp.	0.9999988432848721
 9f81c82da76de9449b2c6ab306fe79c2	Eukaryota	 Holozoa	 Choanoflagellida	 Acanthoecida	 Acanthoecidae	 Pleurasiga	 Pleurasiga_minima	0.9922073578944588
-9f83cb0ac4da925ae485ea423c32e588	Eukaryota							0.9373404085054795
+9f83cb0ac4da925ae485ea423c32e588	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9373404085054795
 9f914344425104ac1575cdd32d0cc33b	Eukaryota							0.9999999999759882
 9fa252992b1fae38cb5f804fdc8b6067	Eukaryota	 Ciliophora	 Intramacronucleata	 Spirotrichea	 Choreotrichia	 Tintinnidium	 Tintinnidium_mucicola	0.9967505300317937
 9fa2a6dae2426bcda965624f29792baa	Eukaryota	 Dinoflagellata	 Dinophyceae					0.7891846438924762
@@ -3757,7 +3757,7 @@ b5052c3936b0f3b92e5ab1daff39b38c	Eukaryota	 Chlorophyta						0.9138061897217181
 b509ddadbcb5c77c495586df73c235e3	Eukaryota	 Ochrophyta	 Chrysophyceae	 Chromulinales	 Chromulinales	 Spumella	 Ochromonadaceae_environmental	0.8049431216889695
 b509ffc12da118f0c1e2e99d137bd07a	Eukaryota	 Diatomea	 Mediophyceae	 Mediophyceae	 Mediophyceae	 Thalassiosira	 Thalassiosira_delicatula	0.9847180558176328
 b50a819b2583dc84a2c2d2d202c235d4	Eukaryota	 Cryptomycota	 LKM11	 LKM11	 LKM11	 LKM11	 uncultured_Chytridiomycota	0.9978093933169523
-b50efb442d2423dbf87f153f4246a671	Eukaryota							0.929823114
+b50efb442d2423dbf87f153f4246a671	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.929823114
 b512a8d17395a3bd3c8c285117a82f2a	Eukaryota	 Cercozoa	 Imbricatea	 Imbricatea	 Imbricatea	 Nudifila	 uncultured_marine	1
 b51a1285b617d6e46e72c1b5d4b78582	Eukaryota	 Cercozoa	 Imbricatea	 Marimonadida	 Marimonadida	 Pseudopirsonia	 uncultured_eukaryote	0.8017318981883246
 b52522eb2b8082812b37e5a130c915d6	Eukaryota	 Cercozoa						0.9999350666330239
@@ -4145,7 +4145,7 @@ c9ca3385bcc6f6ddc8fb0b22a77db81b	Eukaryota	 Ciliophora	 Intramacronucleata	 Spir
 c9d3654942613c0488564ed4ba271c5e	Eukaryota	 Ciliophora	 Intramacronucleata	 Conthreep	 Prostomatea	 Cryptocaryon		0.9999997730821023
 c9f16a660259373d352a3932e82316b9	Eukaryota	 Peronosporomycetes	 Peronosporomycetes	 Peronosporomycetes	 Peronosporomycetes			0.9957327474247388
 c9fa0a1423adb3c5b17cdf5a0e87eefa	Eukaryota	 Pavlovophyceae	 Pavlovophyceae	 Pavlovophyceae	 Pavlovophyceae	 AA5F1	 uncultured_eukaryote	0.9317618792312486
-ca12ee1a071767eb65c418e29fe537b4	Eukaryota							0.9237130075719427
+ca12ee1a071767eb65c418e29fe537b4	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9237130075719427
 ca20fde0110cb4379066d500143d832a	Eukaryota	 Dinoflagellata	 Dinophyceae					0.8324461919057882
 ca27986bc2340fda5ab11d626c35bafb	Eukaryota	 Dinoflagellata	 Dinophyceae					0.9105029891723053
 ca31a31b9fb81414ae38092f92343b2e	Eukaryota	 Labyrinthulomycetes	 uncultured	 uncultured	 uncultured	 uncultured	 uncultured_eukaryote	0.8867909538101558
@@ -4412,7 +4412,7 @@ d72cbbe53ac684a2c35d3baa8054e480	Eukaryota	 Apicomplexa	 Conoidasida	 Coccidia	 
 d73a485783277c8246cab73fb9866834	Eukaryota	 Ascomycota	 Saccharomycetes	 Saccharomycetales	 Trichomonascaceae	 Wicherhamiella-Candida_clade	 Wickerhamiella_sorbophila	0.9999993040632807
 d7477a3e236127dc4637656fda377494	Eukaryota	 Ctenophora	 Tentaculata	 Cydippida	 Cydippida	 Cydippida	 Undescribed_mertensiid	0.9955613273006518
 d75c96479cc91c6e63bb91d03e707bcd	Eukaryota	 Protalveolata	 Syndiniales	 Syndiniales	 Syndiniales	 Amoebophrya		0.7197564015394889
-d77853dacfd4e21f03c03e94baab3d48	Eukaryota							0.9312452885685263
+d77853dacfd4e21f03c03e94baab3d48	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9312452885685263
 d77bb6eb646847591e5ea0ae900b9288	Eukaryota	 Nematozoa	 Chromadorea	 Diplogasterida	 Diplogasterida	 Diplogasterida	 Acrostichus_sp.	0.9141488713633917
 d77edac385e21de232afa30383468ccb	Eukaryota	 Diatomea	 Mediophyceae	 Mediophyceae	 Mediophyceae	 Mediophyceae	 Brockmanniella_brockmannii	0.9997578173762623
 d7856d853b26b750e3faa193475882f6	Eukaryota	 Cercozoa	 Imbricatea	 Imbricatea	 Thaumatomonadida			0.9999382956280083
@@ -4969,7 +4969,7 @@ f274f0e82d8f8744bd3a9b0102ef5f07	Eukaryota							0.9987899511170086
 f2772adc5a59c7728fb57fb8dd12a4e9	Eukaryota	 Cercozoa						0.9999511612601911
 f27fe67741f8e571371a597ae99fe7ec	Eukaryota	 Cryptophyceae	 Cryptophyceae	 Cryptomonadales	 Cryptomonadales	 Plagioselmis	 uncultured_Geminigera	0.985001186
 f28fd2e7273c2dfb2888bddd7797d86e	Eukaryota	 Dinoflagellata	 Dinophyceae	 Gonyaulacales	 Gonyaulacales	 Neoceratium	 uncultured_marine	0.8715957397648736
-f2906f6bb9f3d24a7fdbdb88a75c174a	Eukaryota							0.9272764478095346
+f2906f6bb9f3d24a7fdbdb88a75c174a	Spike	Spike	Spike	Spike	Spike	Spike	Spike	0.9272764478095346
 f2945d0516d5cd5b54a5951f73e697b2	Eukaryota	 SAR	 Labyrinthulomycetes	 Labyrinthulomycetes	 Labyrinthulomycetes	 Sorodiplophrys		0.9999999999971478
 f2b6c9dfcd5e20ca65d3dac07b8b1bb1	Eukaryota	 Ciliophora	 Intramacronucleata	 Conthreep	 Oligohymenophorea	 Cinetochilum	 uncultured_marine	0.9999403739513009
 f2cc00d9d615e3084a8eacdc67732aa7	Eukaryota	 Cercozoa	 Thecofilosea	 Thecofilosea	 Thecofilosea	 uncultured	 uncultured_eukaryote	0.8951229398918954
