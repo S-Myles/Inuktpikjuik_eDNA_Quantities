@@ -73,18 +73,22 @@ ps_melted <- psmelt(S12_rel_abun) %>%
   facet_grid(~ Date) +
   labs(x = "Sampling Location", y = "Relative Abundance") +
   theme_minimal() +
-  theme(
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    strip.text = element_text(size = 10)#,
-    #legend.position = "none"
-  ) +
+    theme(
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 14, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
+    ) +
   scale_fill_manual(values = c(setNames(colorblind_palette, c(top10_asvs, "Others")))))
 
 # Save the plot
 ggsave(
   filename = "outputs/metabarcoding_barplots/S12-BL_rel-abun_sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
@@ -97,9 +101,13 @@ ggsave(
     labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10)#,
-      #legend.position = "none"
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 14, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
     ) +
     scale_fill_manual(values = c(setNames(colorblind_palette, c(top10_asvs, "Others")))))
 
@@ -107,7 +115,7 @@ ggsave(
 ggsave(
   filename = "outputs/metabarcoding_barplots/S12-BL_copies_sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
@@ -154,8 +162,13 @@ ps_melted <- psmelt(S12_rel_abun) %>%
     labs(x = "Sampling Location", y = "Relative Abundance") +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10)
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
     ) +
     scale_fill_manual(values = c(setNames(colorblind_palette, c(top10_asvs, "Others")))))
 
@@ -163,7 +176,7 @@ ps_melted <- psmelt(S12_rel_abun) %>%
 ggsave(
   filename = "outputs/metabarcoding_barplots/S12-sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
@@ -175,18 +188,21 @@ ggsave(
     labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10)#,
-      #legend.position = "none"
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
     ) +
-    # Only include top 10 in the legend; assign grey for "Others"
     scale_fill_manual(values = c(setNames(colorblind_palette, c(top10_asvs, "Others")))))
 
 # Save the plot
 ggsave(
   filename = "outputs/metabarcoding_barplots/S12-Quantitative_sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
@@ -252,9 +268,13 @@ ps_melted <- psmelt(S16_rel_abun) %>%
     labs(x = "Sampling Location", y = "Relative Abundance") +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10)#,
-      #legend.position = "none"
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 14, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
     ) +
     scale_fill_manual(values = c(setNames(set3_palette, c(top10_asvs, "Others")))))
 
@@ -262,7 +282,7 @@ ps_melted <- psmelt(S16_rel_abun) %>%
 ggsave(
   filename = "outputs/metabarcoding_barplots/S16-BL_rel-abun_sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
@@ -275,9 +295,13 @@ ggsave(
     labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10)#,
-      #legend.position = "none"
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 14, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
     ) +
     scale_fill_manual(values = c(setNames(set3_palette, c(top10_asvs, "Others")))))
 
@@ -285,7 +309,7 @@ ggsave(
 ggsave(
   filename = "outputs/metabarcoding_barplots/S16-BL_copies_sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
@@ -333,8 +357,13 @@ ps_melted <- psmelt(S16_rel_abun) %>%
     labs(x = "Sampling Location", y = "Relative Abundance") +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10)
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
     ) +
     scale_fill_manual(values = c(setNames(set3_palette, c(top10_asvs, "Others")))))
 
@@ -342,7 +371,7 @@ ps_melted <- psmelt(S16_rel_abun) %>%
 ggsave(
   filename = "outputs/metabarcoding_barplots/S16-sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
@@ -354,18 +383,21 @@ ggsave(
     labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10)#,
-      #legend.position = "none"
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
     ) +
-    # Only include top 10 in the legend; assign grey for "Others"
     scale_fill_manual(values = c(setNames(set3_palette, c(top10_asvs, "Others")))))
 
 # Save the plot
 ggsave(
   filename = "outputs/metabarcoding_barplots/S16-Quantitative_sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
@@ -428,9 +460,13 @@ ps_melted <- psmelt(S18_rel_abun) %>%
     labs(x = "Sampling Location", y = "Relative Abundance") +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10)#,
-      #legend.position = "none"
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 14, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
     ) +
     scale_fill_manual(values = c(setNames(nature_palette, c(top10_asvs, "Others")))))
 
@@ -438,7 +474,7 @@ ps_melted <- psmelt(S18_rel_abun) %>%
 ggsave(
   filename = "outputs/metabarcoding_barplots/S18-BL_rel-abun_sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
@@ -451,9 +487,13 @@ ggsave(
     labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10)#,
-      #legend.position = "none"
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 14, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
     ) +
     scale_fill_manual(values = c(setNames(nature_palette, c(top10_asvs, "Others")))))
 
@@ -461,7 +501,7 @@ ggsave(
 ggsave(
   filename = "outputs/metabarcoding_barplots/S18-BL_copies_sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
@@ -510,8 +550,13 @@ ps_melted <- psmelt(S18_rel_abun) %>%
     labs(x = "Sampling Location", y = "Relative Abundance") +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10)
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
     ) +
     scale_fill_manual(values = c(setNames(nature_palette, c(top10_asvs, "Others")))))
 
@@ -519,7 +564,7 @@ ps_melted <- psmelt(S18_rel_abun) %>%
 ggsave(
   filename = "outputs/metabarcoding_barplots/S18-sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
@@ -531,18 +576,21 @@ ggsave(
     labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      strip.text = element_text(size = 10)#,
-      #legend.position = "none"
+      legend.title = element_text(size = 14, face = "bold"),
+      legend.text = element_text(size = 14, face = "bold"),
+      axis.text.x = element_text(size = 12, angle = 45, hjust = 1, face = "bold"),  # Bold x-axis values
+      axis.text.y = element_text(size = 14, face = "bold"),  # Bold y-axis values
+      axis.title.x = element_text(size = 14, face = "bold"),    # Bold axis labels
+      axis.title.y = element_text(size = 14, face = "bold"),    # Bold axis labels
+      strip.text = element_text(size = 10, face = "bold")   
     ) +
-    # Only include top 10 in the legend; assign grey for "Others"
     scale_fill_manual(values = c(setNames(nature_palette, c(top10_asvs, "Others")))))
 
 # Save the plot
 ggsave(
   filename = "outputs/metabarcoding_barplots/S18-Quantitative_sp_barplot.png",
   plot = plot,
-  width = 14, height = 6,
+  width = 16, height = 6,
   dpi = 300
 )
 
