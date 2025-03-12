@@ -186,6 +186,7 @@ ggsave(
     geom_bar(stat = "identity", position = "stack") +
     facet_grid(~ Date) +
     labs(x = "Sampling Location", y = "eDNA gene concentration in seawater (copies/L)") +
+    #ylim(0,22000) +
     theme_minimal() +
     theme(
       legend.title = element_text(size = 14, face = "bold"),
